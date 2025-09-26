@@ -1,0 +1,59 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+
+header{
+    background-color: rgba(255, 255, 0, 0.658);
+    text-decoration: none;
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    
+}
+
+a{
+    color: rgba(151, 151, 98, 0.658);
+}
+
+a:hover{
+    border-radius: 8px;
+    padding: 8px;
+    background-color: rgb(170, 169, 169);
+}
+
+iframe{
+    width: 360px;
+    height: 360px;
+    border-radius: 10px;
+}
+
+a:hover{
+    padding: 10px;
+}
+
+img{
+    border-radius: 10px;
+}
+
+footer{
+    background-color: rgba(255, 255, 0, 0.658) ;
+}
+
+
+
+
+
+
+
