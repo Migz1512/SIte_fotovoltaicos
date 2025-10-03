@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../fotovoltaic.js" defer></script>
+    <title>Calculadora</title>
+</head>
+<body>
+    <header>
+        <div></div>
+        <nav>
+
+            <a href="../index.html">Principal</a>
+            <a href="./html/componentes.html">Componentes</a>
+            <a href="./html/empresas_referencia.html">Empresas Refêrencia</a>
+            <a href="./html/em_tijucas.html">Em Tijucas</a>
+            <a href="./calculadora.html">Calculadora</a>
+        </nav>
+        </div>
+    </header>
+    <main>
+        <h1>Calculadora de Placas Fotovoltaicas</h1>
+        <label for="placas">Ensira a quantidade de placas</label><br>
+        <input type="number" id="placas"><br><br>
+
+        <label for="kwhDia">Ensira a Quantidade de kw/h no Dia</label><br>
+        <input type="number" id="kwhDia"><br><br>
+
+        <label for="mes">Quantos dias do mês a placa será utilizada?</label><br>
+        <input type="number" id="mes"><br><br>
+
+        <button onclick="principal()">Calcular</button><br>
+        <div id="resposta"></div><br>
+    </main>
+    <footer>
+        <small>By Miguel &copy; &trade;</small>
+    </footer>
+</body>
+</html>
