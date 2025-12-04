@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Componentes</title>
+</head>
+<body>
+    <header>
+        <div>
+        <nav>
+            <a href="../index.html">Principal</a>
+            <a href="./arduino.html">Arduíno</a>
+
+        </nav>
+        </div>
+    </header>
+    <main>
+        <h1>Projetos</h1><br><br>
+
+        <h2>Níveis de Iluminamento Com Leds</h2><br>
+        <div>
+            <img src="../img/tinkercad_leds01.jpg" alt="">
+            <p>Print da ligação eletrônica do arduíno no tinkercad.</p>
+            <small> Imagem de <a href="https://www.tinkercad.com/dashboard">TinkerCad</a></small>
+        </div><br><br>
+
+        <div>
+            <img src="../img/foto_leds01.jpg" alt="">
+            <p>Foto da ligação física no protoboard.</p>
+            <small> Imagem de <a href="https://www.tinkercad.com/dashboard">TinkerCad</a></small>
+        </div><br><br>
+        <p> Código<br>
+
+    int pinoA0 = 0;<br>
+
+    void setup()<br>
+    {
+        pinMode(A0, INPUT);<br>
+        pinMode(11, OUTPUT);<br>
+        pinMode(13, OUTPUT);<br>
+        pinMode(12, OUTPUT);<br>
+}<br>
+<br>
+void loop()<br>
+{<br>
+        pinoA0 = analogRead(A0);<br>
+        if (pinoA0 < 300) {<br>
+    digitalWrite(11, LOW);<br>
+    digitalWrite(13, LOW);<br>
+    digitalWrite(12, LOW);<br>
+    }<br>
+    if (pinoA0 >= 300 && pinoA0 < 600) {<br>
+    digitalWrite(13, HIGH);<br>
+    digitalWrite(12, LOW);<br>
+    digitalWrite(11, LOW);<br>
+    }<br>
+    if (pinoA0 >= 600 && pinoA0 < 900) {<br>
+    digitalWrite(12, HIGH);<br>
+    digitalWrite(13, LOW);<br>
+    digitalWrite(11, LOW);<br>
+    }<br>
+    if (pinoA0 >= 900) {<br>
+    digitalWrite(11, HIGH);<br>
+    digitalWrite(13, LOW);<br>
+    digitalWrite(12, LOW);<br>
+    }<br>
+  delay(10); // Delay a little bit to improve simulation performance<br><br>
+
+    <br><div>
+
+    <p>Vídeo dos níveis de iluminamento com LEDs .</p>
+
+</div><br><br>
+<br>
+
+    <div>
+        <img src="../img/resistencia_pot.jpg" alt="">
+        <p>Foto da medição da resistência no potenciômetro de 10 k ohms.</p>
+    </div><br><br>
+
+    <div>
+        <img src="../img/300.jpg" alt="">
+        <p>Foto da medida de tensão no sistema de LEDs ( valor 300 ).</p>
+    </div><br><br>
+
+
+    <h2>7 Segmentos</h2>
+
+    <img src="../img/sete_segmentos.jpg" alt="">
+    <p>Print da ligação eletrônica do arduíno no tinkercad.</p>
+    <small> Imagem de <a href="https://www.tinkercad.com/dashboard">TinkerCad</a></small>
+    </div><br><br>
+
+    <div>
+        <img src="../img/foto_sete_segmentos.jpg" alt="">
+        <p>Foto da ligação física no protoboard.</p>
+        <small> Imagem de <a href="https://www.tinkercad.com/dashboard">TinkerCad</a></small>
+    </div><br><br>
+
+    <p>Código</p><br><br>
+
+
+void setup() <br>
+{<br>
+  pinMode(A0, INPUT);<br>
+  Serial.begin(9600);<br>
+  pinMode(2, OUTPUT);<br>
+  pinMode(3, OUTPUT);<br>
+  pinMode(4, OUTPUT);<br>
+  pinMode(5, OUTPUT);<br>
+  pinMode(6, OUTPUT);<br>
+  pinMode(7, OUTPUT);<br>
+  pinMode(8, OUTPUT);<br>
+}<br>
+<br>
+void loop()<br>
+{<br>
+  Serial.println(analogRead(A0));<br>
+  if (analogRead(A0) <= 99) {<br>
+    digitalWrite(2, HIGH);<br>
+    digitalWrite(3, HIGH);<br>
+    digitalWrite(4, HIGH);<br>
+    digitalWrite(5, HIGH);<br>
+    digitalWrite(6, HIGH);<br>
+    digitalWrite(7, HIGH);<br>
+    digitalWrite(8, LOW);<br>
+  }<br>
+  if (analogRead(A0) >= 100 && analogRead(A0) < 200) {<br>
+    digitalWrite(2, LOW);<br>
+    digitalWrite(3, HIGH);<br>
+    digitalWrite(4, HIGH);<br>
+    digitalWrite(5, LOW);<br>
+    digitalWrite(6, LOW);<br>
+    digitalWrite(7, LOW);<br>
+    digitalWrite(8, LOW);<br>
+  }<br>
+  if (analogRead(A0) >= 200 && analogRead(A0) < 300) {<br>
+    digitalWrite(2, HIGH);<br>
+    digitalWrite(3, HIGH);<br>
+    digitalWrite(4, LOW);<br>
+    digitalWrite(5, HIGH);<br>
+    digitalWrite(6, HIGH);<br>
+    digitalWrite(7, LOW);<br>
+    digitalWrite(8, HIGH);<br>
+  }<br>
+  if (analogRead(A0) >= 300 && analogRead(A0) < 400) {<br>
+    digitalWrite(2, HIGH);<br>
+    digitalWrite(3, HIGH);<br>
+    digitalWrite(4, HIGH);<br>
+    digitalWrite(5, HIGH);<br>
+    digitalWrite(6, LOW);<br>
+    digitalWrite(7, LOW);<br>
+    digitalWrite(8, HIGH);<br>
+  }<br>
+  if (analogRead(A0) >= 400 && analogRead(A0) < 500) {<br>
+    digitalWrite(2, LOW);<br>
+    digitalWrite(3, HIGH);<br>
+    digitalWrite(4, HIGH);<br>
+    digitalWrite(5, LOW);<br>
+    digitalWrite(6, LOW);<br>
+    digitalWrite(7, HIGH);<br>
+    digitalWrite(8, HIGH);<br>
+  }<br>
+  if (analogRead(A0) >= 500 && analogRead(A0) < 600) {<br>
+    digitalWrite(2, HIGH);<br>
+    digitalWrite(3, LOW);<br>
+    digitalWrite(4, HIGH);<br>
+    digitalWrite(5, HIGH);<br>
+    digitalWrite(6, LOW);<br>
+    digitalWrite(7, HIGH);<br>
+    digitalWrite(8, HIGH);<br>
+  }<br>
+  if (analogRead(A0) >= 600 && analogRead(A0) < 700) {<br>
+    digitalWrite(2, HIGH);<br>
+    digitalWrite(3, LOW);<br>
+    digitalWrite(4, HIGH);<br>
+    digitalWrite(5, HIGH);<br>
+    digitalWrite(6, HIGH);<br>
+    digitalWrite(7, HIGH);<br>
+    digitalWrite(8, HIGH);<br>
+  }<br>
+  if (analogRead(A0) >= 700 && analogRead(A0) < 800) {<br>
+    digitalWrite(2, HIGH);<br>
+    digitalWrite(3, HIGH);<br>
+    digitalWrite(4, HIGH);<br>
+    digitalWrite(5, LOW);<br>
+    digitalWrite(6, LOW);<br>
+    digitalWrite(7, LOW);<br>
+    digitalWrite(8, LOW);<br>
+  }<br>
+  if (analogRead(A0) >= 800 && analogRead(A0) < 900) {<br>
+    digitalWrite(2, HIGH);<br>
+    digitalWrite(3, HIGH);<br>
+    digitalWrite(4, HIGH);<br>
+    digitalWrite(5, HIGH);<br>
+    digitalWrite(6, HIGH);<br>
+    digitalWrite(7, HIGH);<br>
+    digitalWrite(8, HIGH);<br>
+  }<br>
+  if (analogRead(A0) >= 900) {<br>
+    digitalWrite(2, HIGH);<br>
+    digitalWrite(3, HIGH);<br>
+    digitalWrite(4, HIGH);<br>
+    digitalWrite(5, HIGH);<br>
+    digitalWrite(6, LOW);<br>
+    digitalWrite(7, HIGH);<br>
+    digitalWrite(8, HIGH);<br>
+  }<br>
+  delay(10); // Delay a little bit to improve simulation performance<br>
+}<br><br><br>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3g3CQmLstE4?si=pFcHgmA_5snY2zWR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>Vídeo dos níveis de iluminamento com LEDs .</p><br><br>
+
+    <div>
+        <img src="../img/tensão_sete_segmentos.jpg" alt=""><br>
+        <p>Foto do teste do display de 7 segmentos no multímetro.</p>
+    </div><br><br>
+
+    <div>
+        <img src="../img/700 (2).jpg" alt="">
+        <p>Foto da medida de tensão no sistema de 7 Segmentos( valor 700 ).</p>
+    </div><br><br>
+
+
+    
+    <p>Vídeo dos níveis de iluminamento com LEDs .</p><br><br>
+
+
+        
+    </main>
+    <footer>
+        <small>By Miguel &copy; &trade;</small>
+    </footer>
+</body>
+</html>
